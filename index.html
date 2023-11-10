@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Pagella Html</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    
+    <body>
+    <br>    
+    
+<form id="myForm">
+   <p id="paragraph"></p>
+
+<div class="div1">
+        <label for="print"><b>Enter name</b></label> <br>
+    <input type="text" id="nam" name="name"> 
+    <br>
+    <br>
+
+        <label for="print"><b>Enter surname</b></label> <br>
+    <input type="text" id="sur" name="surname">
+    <br>
+    <br>
+        <label for="print"><b>Enter address</b></label> <br>
+    <input type="text" id="add" name="address">
+    <br>
+    <br>
+    
+   <div class="radio-button">
+        <label for="print"><b>Select sex</b></label>
+        <div class="radio">
+            <input type="radio" id="male" value="male" name="radio">
+            <label for="male">Male</label>
+        </div>
+        <div class="radio">
+            <input type="radio" id="female" value="female" name="radio">
+            <label for="female">Female</label>
+        </div>
+        <div class="radio">
+            <input type="radio" id="not_specified" value="I'd rather not specify" name="radio">
+            <label for="not_specified">I'd rather not specify</label>
+        </div>
+    </div>
+
+
+        
+    
+        <label for="regionList"><b>Select a province</b></label>
+    <select id="regionList">
+        <option value="blank"></option>
+        <option value="abruzzo">Abruzzo</option>
+        <option value="basilicata">Basilicata</option>
+        <option value="calabria">Calabria</option>
+        <option value="campania">Campania</option>
+        <option value="emiliaromagna">Emilia-Romagna</option>
+        <option value="friuliveneziagiulia">Friuli-Venezia Giulia</option>
+        <option value="lazio">Lazio</option>
+        <option value="liguria">Liguria</option>
+        <option value="lombardia">Lombardia</option>
+        <option value="marche">Marche</option>
+        <option value="molise">Molise</option>
+        <option value="piemonte">Piemonte</option>
+        <option value="puglia">Puglia</option>
+        <option value="sardegna">Sardegna</option>
+        <option value="sicilia">Sicilia</option>
+        <option value="toscana">Toscana</option>
+        <option value="trentinoaltoadige">Trentino-Alto Adige</option>
+        <option value="umbria">Umbria</option>
+        <option value="valledaosta">Valle d'Aosta</option>
+        <option value="veneto">Veneto</option>
+    </select>
+
+</div>    
+        
+    <div id="content-container">
+         <div class="div2">
+            <p><b>Enter valued subjects</b></p> 
+        <input type="checkbox" id="box1" name="Italian" value="Italian" onclick="onClickHandler(document.getElementById('box1').value);">
+        <label for="box1"> Italian</label><br>
+        <input type="checkbox" id="box2" name="History" value="History" onclick="onClickHandler(document.getElementById('box2').value);">
+        <label for="box2"> History</label><br>
+        <input type="checkbox" id="box31" name="Mathematics" value="Mathematics" onclick="onClickHandler(document.getElementById('box3').value);">
+        <label for="box3"> Mathematics</label><br>
+        <input type="checkbox" id="box41" name="English" value="English" onclick="onClickHandler(document.getElementById('box4').value);">
+        <label for="box4"> English</label><br>
+        <input type="checkbox" id="box5" name="Informatics" value="Informatics" onclick="onClickHandler(document.getElementById('box5').value);">
+        <label for="box5"> Informatics</label><br>
+        <input type="checkbox" id="box6" name="TPSIT" value="TPSIT" onclick="onClickHandler(document.getElementById('box6').value);">
+        <label for="box6"> TPSIT</label><br>
+        <br>
+        <input type="button" value="Confirm" onclick="Print()">
+        
+        <p id="paragraph"></p>
+    </div>
+        
+</div>
+</form>
+    
+    <script>
+    function Print() {
+        var form = document.getElementById("myForm");
+        var name = form.elements["name"].value;
+        var surname = form.elements["surname"].value;
+        var address = form.elements["address"].value;
+        var sex = document.querySelector('input[name="radio"]:checked').value;
+        var province = document.getElementById("regionList").value;
+
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        var checkedValues = [];
+
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkedValues.push(checkboxes[i].value);
+        }
+
+        var paragraph = document.getElementById("paragraph");
+        paragraph.innerHTML =
+            "Name: " + name + "<br>" +
+            "Surname: " + surname + "<br>" +
+            "Address: " + address + "<br>" +
+            "Sex: " + sex + "<br>" +
+            "Province: " + province + "<br>" +
+            "Checked subjects: " + checkedValues.join(', ');
+    }
+</script>
+
+        
+    </body>
+</html>

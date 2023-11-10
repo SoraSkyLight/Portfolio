@@ -1,0 +1,45 @@
+body{
+    background-color: silver;
+}
+.div1 {
+  float: left;
+  width: 15%; 
+  box-sizing: border-box; 
+}
+
+.div2 {
+  float: left;
+  width: 50%;
+  box-sizing: border-box; 
+}
+
+.radio-button {
+    margin: 10px 0; 
+}
+
+.radio {
+    display: flex;
+    align-items: center;
+}
+.radio input{
+    margin-right: 5px; 
+}
+
+#content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#div2 {
+    flex: 1;
+    margin-right: 20px; 
+}
+
+#paragraph {
+    flex: 1;
+    float: right; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    max-width: 40%;
+}
