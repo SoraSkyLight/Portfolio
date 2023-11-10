@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><b>Calculator html</b></title>
+        <link rel="stylesheet" type="text/css" href="calculator.css">
+    </head>
+    <body>
+        <div class="input">
+            <label for="print"><b>Calculator</b></label>
+            <br>
+            <br>
+        <input type="text" id="num1" name="number1" placeholder="First number">    
+        <br>
+        <br>
+        <input type="text" id="num2" name="number2" placeholder="Second number">
+        </div>
+       
+        <br>
+     
+        <div class="operations">
+            <button onclick="sum()">+</button>
+            <button onclick="minus()">-</button>
+            <button onclick="multiplication()">*</button>
+            <button onclick="division()">/</button>
+        <!--
+            <input type="button" id="sum" name="sum" value="+">
+            <input type="button" id="minus" name="minus" value="-">
+            <input type="button" id="multiplication" name="multiplication" value="*">
+            <input type="button" id="division" name="division" value="/">
+        -->
+        </div>
+        <br>
+        <div id="result"></div>
+
+        <script>
+            function sum(){
+                const num1 = parseFloat(document.getElementById('num1').value);
+                const num2 = parseFloat(document.getElementById('num2').value);
+                if (!isNaN(num1) && !isNaN(num2)) {
+                    const result = num1 + num2;
+                    //this line below updates my result from the function
+                    document.getElementById('result').textContent = 'Result: ' + result;
+                  } else {
+                    document.getElementById('result').textContent = "Please enter valid numbers";
+                  }
+            }
+            function minus(){
+                const num1 = parseFloat(document.getElementById('num1').value);
+                const num2 = parseFloat(document.getElementById('num2').value);
+                if (!isNaN(num1) && !isNaN(num2)) {
+                    const result = num1 - num2;
+                    //this line below updates my result from the function
+                    document.getElementById('result').textContent = 'Result: ' + result;
+                  } else {
+                    document.getElementById('result').textContent = "Please enter valid numbers";
+                  }
+            }
+            function multiplication(){
+                const num1 = parseFloat(document.getElementById('num1').value);
+                const num2 = parseFloat(document.getElementById('num2').value);
+                if (!isNaN(num1) && !isNaN(num2)) {
+                    const result = num1 * num2;
+                    //this line below updates my result from the function
+                    document.getElementById('result').textContent = 'Result: ' + result;
+                  } else {
+                    document.getElementById('result').textContent = "Please enter valid numbers";
+                  }
+            }
+            function division(){
+                const num1 = parseFloat(document.getElementById('num1').value);
+                const num2 = parseFloat(document.getElementById('num2').value);
+                if (!isNaN(num1) && !isNaN(num2)) {
+                    const result = num1 / num2;
+                    //this line below updates my result from the function
+                    document.getElementById('result').textContent = 'Result: ' + result;
+                  } else {
+                    document.getElementById('result').textContent = "Please enter valid numbers";
+                  }
+            }
+            
+        </script>
+    </body>
+</html>

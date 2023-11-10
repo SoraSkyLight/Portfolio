@@ -1,0 +1,16 @@
+body{
+    background-color: silver;
+}
+table, th, td {
+    border:1px solid black;
+  }
+div.input{
+    margin: auto;
+
+}
+div.operations button{
+    margin: auto;
+
+    display:inline;
+    width:50px;
+}
