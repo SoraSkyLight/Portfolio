@@ -1,16 +1,17 @@
 body{
     background-color: silver;
 }
-table, th, td {
-    border:1px solid black;
-  }
 div.input{
     margin: auto;
-
+    text-align: center;
+}
+.operations{
+    text-align: center;  
 }
 div.operations button{
-    margin: auto;
-
-    display:inline;
+    display: inline;
     width:50px;
+}
+#result{
+    text-align: center;
 }
